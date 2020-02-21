@@ -1,1 +1,39 @@
 // Mixins Here
+.centered(){
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.bordered(){
+    border: 1px double #e0e0e0;
+    border-radius: 10px;
+}
+.size(@width; @height; @font-size;){
+    width:@width;
+    height:@height;
+    font-size:@font-size;
+}
+.btn{
+    display: block;
+    background-color:@btn-bg-color;
+    cursor: pointer;
+    .size(200px, 45px, 2rem);
+    border-radius: 10px;
+    color:@porcelain;
+    .centered();
+
+    &:hover{
+        background-color:@waterloo;
+        color:@btn-bg-color;
+    }
+    @media @phone{
+        display: block;
+        background-color:@btn-bg-color;
+        cursor: pointer;
+        .size(100%, 120px, 3rem);
+        border-radius: 10px;
+        color:@porcelain;
+        .centered();
+        margin:0 auto;
+    }
+}
